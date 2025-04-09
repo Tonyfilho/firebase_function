@@ -6,12 +6,14 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { environment } from '../environment/environment';
+import { getFunctions } from 'firebase/functions';
 
 
 // Inicializa o Firebase
  const firebaseApp = initializeApp(environment.firebase)
-export const firestore = getFirestore(firebaseApp);
-export const auth = getAuth(firebaseApp);
+ const firestore = getFirestore(firebaseApp);
+ const auth = getAuth(firebaseApp);
+ const functions = getFunctions(firebaseApp);
 
 
 
@@ -22,6 +24,7 @@ export const appConfig: ApplicationConfig = {
     { provide: 'FIREBASE_APP', useValue: firebaseApp },
     { provide: 'FIREBASE_FIRESTORE', useValue: firestore },
     { provide: 'FIREBASE_AUTH', useValue: auth },
+    { provide: 'FIREBASE_FUNCTIONS', useValue: functions }
 
 
 

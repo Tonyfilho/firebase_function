@@ -17,20 +17,21 @@
       <a class="sign-out">sign out</a>
     </nav>
   </header>
-
-  <section class="content">
-    <h1>Tutorial Requests</h1>
-    <ul class="request-list"> 
-      <li>
-        <span class="text">Laravel 6 tutorial</span>
-        <div>
-          <span class="votes">125</span>
-          <i class="material-icons upvote">arrow_upward</i>
-        </div>
-      </li>
-    </ul>
-  </section>
   
+  <div class="close" (click)="closeModal()">
+  <section class="content">
+      <h1>Tutorial Requests</h1>
+      <ul class="request-list">
+        <li>
+          <span class="text">Laravel 6 tutorial</span>
+          <div>
+            <span class="votes">125</span>
+            <i class="material-icons upvote">arrow_upward</i>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
 
 </body>
 <router-outlet />

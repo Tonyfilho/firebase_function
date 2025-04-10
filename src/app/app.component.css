@@ -83,9 +83,10 @@ body{
     z-index: 1;
     /* display: none; */
   }
-  .new-request.open{
-    display: block;
-  }
+
+   .close {   
+    cursor: pointer;
+  z-index: 10;}
   
   /* form element styles */
   input{

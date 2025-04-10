@@ -1,12 +1,23 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'firebase-functions';
+  isModalOpen = false;
+
+
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+  closeModal() {
+    this.isModalOpen = false;
+  }
 }

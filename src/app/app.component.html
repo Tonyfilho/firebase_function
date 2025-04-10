@@ -1,11 +1,11 @@
 <body>
   <!-- new request modal -->
-  <div class="new-request" [ngStyle]="{'display': this.isModalOpen ? 'block' : 'none'}">
-    <div class="modal">
+  <div class="new-request" [ngClass]="{'open': isModalOpen}" (click)="closeModal()">
+    <div class="modal" (click)="$event.stopPropagation()">
       <h2>Request a Tutorial</h2>
       <form>
         <input type="text" name="request" placeholder="Request...">
-        <button>Submit Request</button>
+        <button type="button">Submit Request</button>
         <p class="error"></p>
       </form>
     </div>
@@ -18,7 +18,7 @@
     </nav>
   </header>
   
-  <div class="close" (click)="closeModal()">
+  
   <section class="content">
       <h1>Tutorial Requests</h1>
       <ul class="request-list">
@@ -31,7 +31,7 @@
         </li>
       </ul>
     </section>
-  </div>
+  
 
 </body>
 <router-outlet />

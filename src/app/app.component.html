@@ -1,4 +1,11 @@
 <body>
+  <div class="local-header">
+    <app-header></app-header>
+    <div class="local-header-content">
+      <h1>Welcome to the Tutorial Requests App</h1>
+      <p>Here you can request tutorials and vote for your favorites!</p>
+    </div>
+  </div>
   <!-- new request modal -->
   <div class="new-request" [ngClass]="{'open': isModalOpen}" (click)="closeModal()">
     <div class="modal" (click)="$event.stopPropagation()">
@@ -10,28 +17,28 @@
       </form>
     </div>
   </div>
-  
+
   <header>
     <nav>
       <a class="add-request" (click)="openModal()">add request</a>
       <a class="sign-out">sign out</a>
     </nav>
   </header>
-  
-  
+
+
   <section class="content">
-      <h1>Tutorial Requests</h1>
-      <ul class="request-list">
-        <li>
-          <span class="text">Laravel 6 tutorial</span>
-          <div>
-            <span class="votes">125</span>
-            <i class="material-icons upvote">arrow_upward</i>
-          </div>
-        </li>
-      </ul>
-    </section>
-  
+    <h1>Tutorial Requests</h1>
+    <ul class="request-list">
+      <li>
+        <span class="text">Laravel 6 tutorial</span>
+        <div>
+          <span class="votes">125</span>
+          <i class="material-icons upvote">arrow_upward</i>
+        </div>
+      </li>
+    </ul>
+  </section>
+
 
 </body>
 <router-outlet />

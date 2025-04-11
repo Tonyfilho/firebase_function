@@ -1,0 +1,59 @@
+/* header.component.scss */
+.header {
+    width: 100%;
+    background-color: #d1caca;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 1%;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  
+  .nav-content {
+    display: flex;
+    align-items: center;
+    height: 64px;
+  }
+  
+  .logo-link {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  
+    &:hover {
+      color: #007bff;
+    }
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .nav-content {
+      height: 56px;
+    }
+    
+    .logo-link {
+      font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nav-container {
+      padding: 0 12px;
+    }
+    
+    .logo-link {
+      font-size: 1.1rem;
+    }
+  }

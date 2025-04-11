@@ -31,7 +31,8 @@ import {Request, Response} from "express";
 interface RandomNumberRequest extends Request {}
 interface RandomNumberResponse extends Response {}
 
-// http request 1
+// http request  pode ser chamado pelo postman ou pelo front-end, ou direto no navegador, copiando o link da url do firebase lá console firebase
+// http request 1, neste caso será um redirest
 exports.randomNumber = functions.https.onRequest((req: RandomNumberRequest, res: RandomNumberResponse) => {
     cors(req, res, () => {
         const randomNumber: number = Math.round(Math.random() * 100) + 1;
@@ -45,4 +46,11 @@ exports.toTheDojo = functions.https.onRequest((req: RandomNumberRequest, res: Ra
          res.redirect("https://tonyfilhocurriculum.web.app/");
        
     });
+});
+
+
+// callable function precisa se chamanda no front-end com o firebase callable function.
+
+exports.sayHello = functions.https.onCall((data: any, context: any) => {
+   return  "Hello Tony!";
 });

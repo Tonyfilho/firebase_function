@@ -1,0 +1,17 @@
+<div class="center">
+    <h1>Welcome to the Hello OnCall Functions</h1>
+    <p>Here you can request tutorials and vote for your favorites!</p>
+         <!-- new request modal -->
+  <div class="new-request" [ngClass]="{'open': isModalOpen}" (click)="closeModal()">
+    <div class="modal" (click)="$event.stopPropagation()">
+      <h2>Request a Tutorial</h2>
+      <form>
+        <input type="text" name="request" placeholder="Request...">
+        <button  (click)="getHello()">Get Request</button>
+        <p class="error"></p>
+      </form>
+      
+    </div>
+  </div>
+</div>
+

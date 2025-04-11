@@ -1,61 +1,35 @@
-# firebase_function
+# 04ª Aula criação de funções e deploy
 
-# FirebaseFunctions
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+const functions = require("firebase-functions");
+const admin = require("firebase-admin");
+admin.initializeApp();
+//const db = admin.firestore();
+const cors = require("cors")({origin: true});
+import {Request, Response} from "express";
 
-## Development server
 
-To start a local development server, run:
 
-```bash
-ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+interface RandomNumberRequest extends Request {}
+interface RandomNumberResponse extends Response {}
 
-## Code scaffolding
+// http request 1
+exports.randomNumber = functions.https.onRequest((req: RandomNumberRequest, res: RandomNumberResponse) => {
+    cors(req, res, () => {
+        const randomNumber: number = Math.round(Math.random() * 100) + 1;
+        // res.json({randomNumber});
+        res.send(`Random number: ${randomNumber}`);
+    });
+});
+// http request 2, neste caso será um redirest
+exports.toTheDojo = functions.https.onRequest((req: RandomNumberRequest, res: RandomNumberResponse) => {
+    cors(req, res, () => {
+         res.redirect("https://tonyfilhocurriculum.web.app/");
+       
+    });
+});
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+# firebase deploy --only functions  
+# firebase deploy --only functions:toTheDojo
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

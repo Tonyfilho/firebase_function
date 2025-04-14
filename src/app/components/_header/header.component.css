@@ -1,0 +1,91 @@
+/* header.component.scss */
+.header {
+    width: 100%;
+    min-height: 110px;
+    background-color: #d1caca;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  
+
+  .nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    height: max-content;
+    gap: 25px;
+  }
+  
+  .logo-link {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  
+    &:hover {
+      color: #007bff;
+    }
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+
+  .logo-link {    
+    font-family: inherit; /* Herda a fonte do elemento pai */
+    font-weight: 500; /* Peso médio para suavidade (não muito fino nem muito negrito) */
+    font-size: 1rem; /* Tamanho padrão ou ajuste conforme necessário */
+    letter-spacing: 0.5px; /* Pequeno espaçamento entre letras para melhor legibilidade */
+    line-height: 1.5; /* Espaçamento confortável entre linhas */
+    color: #333; /* Cor suave (ajuste para o tom desejado) */
+    text-decoration: none; /* Remove sublinhado padrão */
+    transition: all 0.3s ease; /* Transição suave para hover/focus */
+
+    /* Efeito suave ao interagir */
+    &:hover, &:focus {
+        color: #007bff; /* Cor azul suave no hover (pode ajustar) */
+        text-decoration: underline; /* Sublinhado sutil no hover */
+        text-underline-offset: 3px; /* Distância do sublinhado */
+        text-decoration-thickness: 1px; /* Espessura fina do sublinhado */
+    }
+
+    /* Melhoria para acessibilidade no foco */
+    &:focus {
+        outline: 2px solid rgba(0, 123, 255, 0.3);
+        outline-offset: 2px;
+    }
+}
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .nav-content {
+      height: 110px;
+    }
+    
+    .logo-link {
+      font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nav-container {
+      padding: 0 12px;
+    }
+    
+    .logo-link {
+      font-size: 1.1rem;
+    }
+  }

@@ -27,9 +27,8 @@ main {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  align-content: center;
-  padding: 1rem; /* Adicionado para espaçamento em telas menores */
+  justify-content: center;
+  align-content: center; 
   background-color: var(--background-color);
 }
 

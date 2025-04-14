@@ -1,6 +1,9 @@
 import { Routes } from '@angular/router';
-import { HelloComponent } from './hello/hello.component';
+
 
 export const routes: Routes = [
-    {component: HelloComponent, path: 'hello' },
-];
+    { path: '', redirectTo: 'class', pathMatch: 'full' }, // Rota padrão
+    { path: 'class', loadComponent:()  => import('./pages/home/home.component').then(c => c.HomeComponent)},
+    { path: 'class/hello', loadComponent: () => import('./hello/hello.component').then(c => c.HelloComponent) },
+    // Adicione outras rotas aqui
+  ];

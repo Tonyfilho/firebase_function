@@ -42,7 +42,11 @@
   .footer-section a:hover {
     color: #4CAF50;
   }
-  
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
   .footer-bottom {
     text-align: center;
     padding: 1rem;

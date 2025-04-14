@@ -1,13 +1,9 @@
 /* header.component.scss */
 .header {
     width: 100%;
-    min-height: 130px;
+    min-height: max-content;
     background-color: #d1caca;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    margin-bottom: 1%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -45,6 +41,7 @@
 
   .nav-content {
     max-width: 1200px;
+    min-height: 60px;
     margin: 0 auto;
     padding: 0 16px;
     display: flex;
@@ -53,10 +50,12 @@
     align-items: center;
     height: max-content;
     gap: 25px;
+    background-size: var(--animation-background-size);
+    animation: var(--animation-move-gradient);
   }
   
   .logo-link {
-    color: #333;
+    /* color: #333; */
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;

@@ -10,10 +10,11 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--background-color);
+  
   color: #333;
   line-height: 1.6;
 }
+
 app-header {
   width: 100%;
   min-height: max-content;
@@ -22,12 +23,14 @@ app-header {
 /* Conteúdo principal */
 main {
   flex: 1;
-  min-height: 70vh;
+  min-height: 75vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   align-content: center;
+  padding: 1rem; /* Adicionado para espaçamento em telas menores */
+  background-color: var(--background-color);
 }
 
 /* Rodapé */
@@ -37,31 +40,35 @@ app-footer {
 }
 
 /* Media Queries para responsividade */
+
+/* Tablets e telas menores */
 @media (max-width: 768px) {
-  .local-header-content h1 {
-    font-size: 2rem;
-  }
-
-  .local-header-content p {
-    font-size: 1rem;
-  }
-
   main {
-    margin: 1rem auto;
-    padding: 0 0.5rem;
+    justify-content: center;
+    padding: 0.5rem;
+    min-height: 60vh; /* Ajuste para dar mais espaço ao conteúdo */
   }
 }
 
+/* Dispositivos móveis */
 @media (max-width: 480px) {
-  .local-header-content {
-    padding: 1.5rem 0.5rem;
+  body {
+   
+    line-height: 1.5; /* Ajuste fino para melhor legibilidade */
   }
-
-  .local-header-content h1 {
-    font-size: 1.8rem;
+  
+  main {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: 60vh;
+    padding: 0.5rem;
   }
+}
 
-  .local-header-content p {
-    font-size: 0.9rem;
+/* Telas muito pequenas (opcional) */
+@media (max-width: 320px) {
+  main {
+    padding: 0.25rem;
   }
 }

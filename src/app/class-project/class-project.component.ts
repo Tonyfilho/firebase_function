@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-class',
+  selector: 'app-class-project',
   imports: [CommonModule,],
-  templateUrl: './class.component.html',
-  styleUrl: './class.component.css'
+  templateUrl: './class-project.component.html',
+  styleUrl: './class-project.component.css'
 })
-export class ClassComponent {
+export class ClassProjectComponent {
   isModalOpen = false;
 
 

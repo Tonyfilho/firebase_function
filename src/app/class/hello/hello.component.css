@@ -1,0 +1,81 @@
+.center {
+    width: 250px; /* mesma largura do header */
+    margin: 0 auto; /* centraliza horizontalmente */
+    padding: 20px;
+    text-align: center; /* centraliza o texto */
+    font-family: Consolas, Arial; /* mantendo a fonte do projeto */
+    color: #555; /* mantendo a cor do projeto */
+  }
+  
+  .center h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #555; /* mantendo a cor original */
+  }
+  
+  .center h2 {
+    font-size: 1.3rem;
+    margin: 20px 0 15px 0;
+    color: #555; /* mantendo a cor original */
+  }
+  
+  .center p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .center form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .center input {
+    padding: 8px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    transition: border 0.3s ease;
+  }
+  
+  .center input:focus {
+    border-color: #ffe100; /* amarelo do projeto */
+    outline: none;
+  }
+  
+  .center button {
+    padding: 10px;
+    background: #ffe100; /* amarelo do projeto */
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .center button:hover {
+    background: #e6d000; /* tom mais escuro do amarelo */
+    transform: translateY(-2px);
+  }
+  
+  .error {
+    color: #ff3333;
+    margin-top: 10px;
+    min-height: 20px;
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 400px) {
+    .center {
+      width: 90%;
+      padding: 15px;
+    }
+    
+    .center h1 {
+      font-size: 1.3rem;
+    }
+    
+    .center h2 {
+      font-size: 1.1rem;
+    }
+  }

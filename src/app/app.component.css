@@ -22,14 +22,15 @@ app-header {
 
 /* Conteúdo principal */
 main {
-  flex: 1;
-  min-height: 75vh;
+  width: 100%;
+  min-height: max-content;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   align-content: center; 
   background-color: var(--background-color);
+  
 }
 
 /* Rodapé */

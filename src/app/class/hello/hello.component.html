@@ -1,15 +1,44 @@
 <div class="center">
-    <h1>Welcome to the Hello OnCall Functions</h1>
-    <p>Here you can request tutorials and vote for your favorites!</p>
-         <!-- new request modal -->
-  
-      <h2>Request a Tutorial</h2>
-      <form>
-        <input type="text" name="request" placeholder="Request...">
-        <button  (click)="getHello()">Get Request</button>
-        <p class="error"></p>
-      </form>
-      
- 
-</div>
+  <h1>Welcome to the Hello OnCall Functions</h1>
+  <p>01- Callable function precisa se chamanda no front-end com o firebase callable function.
+    Callable não se retorna o Data, ao contrario do Request Functions onde retornamos o RESPONSE
+    Neste caso, o retorno é feito pelo firebase, e não pelo código.
+    Callable function não precisa de cors, pois o firebase já faz isso para nós.</p>
 
+  <p>
+    02- Em Callable Functions, você não retorna um Response HTTP diretamente (como em onRequest). Em vez disso, você
+    retorna um objeto/dados, e o Firebase SDK encapsula isso em "{{ '{' }} data: ... {{ '}' }}" automaticamente.
+    No front-end, você acessa os dados via result.data (como no exemplo acima).
+    Em funções HTTP tradicionais (onRequest), você precisa gerenciar o Response manualmente (incluindo CORS).
+
+  </p>
+
+  <p>
+    03- Neste caso, o retorno é feito pelo firebase, e não pelo código.
+    O Firebase SDK lida com a serialização/deserialização dos dados e o formato da resposta. Você só
+    precisa retornar um objeto/dados na sua função Cloud.
+  </p>
+
+  <p>
+   04- Callable function não precisa de CORS, pois o firebase já faz isso para nós.
+    Callable Functions não exigem configuração manual de CORS, pois o Firebase SDK gerencia a comunicação
+    por meio de seu próprio protocolo (não é uma requisição HTTP direta). Já em funções HTTP tradicionais (onRequest),
+    você precisa configurar CORS manualmente.
+  </p>
+  <p class="welcome-title">Callable Functions</p>
+  <div class="images">
+  </div>
+
+
+
+
+
+  <h2>Request a Tutorial</h2>
+  <form>
+    <input type="text" name="request" placeholder="Request...">
+    <button (click)="getHello()">Get Request</button>
+    <p class="error"></p>
+  </form>
+
+
+</div>

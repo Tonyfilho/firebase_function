@@ -28,16 +28,7 @@ exports.toTheDojo = functions.https.onRequest(
   }
 );
 
-/* OBS: Callable function precisa se chamanda no front-end com o firebase callable function.
-Callable não se retorna o Data, ao contrario do Request Functions onde retornamos o RESPONSE
-Neste caso, o retorno é feito pelo firebase, e não pelo código.
-Callable function não precisa de cors, pois o firebase já faz isso para nós.
-*/
-
-/**
- * Data serve para passar dados para a função, no caso o nome, ou seja vem do Front-end.
- * Context serve para passar o contexto da função, no caso o usuário que está chamando a função
- */
+// Callable Function, pode ser chamado pelo front-end, ou seja, o front-end chama a função e não o contrário
 exports.sayHello = functions.https.onCall((data: any, context: any) => {
   return `Hello ${data.name} `;
 });

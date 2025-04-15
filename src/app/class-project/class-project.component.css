@@ -1,43 +1,43 @@
+h1, h2, p, a, input {
+  color: #555;
+  font-family: Consolas, Arial;
+  text-decoration: none;
+}
 
-
-h1,h2,p,a,input{
-    color: #555;
-    font-family: Consolas, Arial;
-    text-decoration: none;
-  }
-    
-  ul{
-    margin: 0;
-    padding: 0;
-  }
-   
+ul {
+  margin: 0;
+  padding: 0;
+}
 
 .class-project {
   display: flex;
-  align-content: flex-start;
-  align-items: center;
-  min-width: 900px;
-  min-height: 60vh;
-  flex-wrap: wrap;
   flex-direction: column;
+  align-items: center;
+  min-width: 900px; /* mantendo o min-width como solicitado */
+  width: 100%;
+  min-height: 60vh;
+  padding: 20px 0;
 }
 
 /* header styles */
 .header {
-  width: 100%;
+  width: 550px; /* largura fixa de 250px */
   padding: 20px;
   text-align: right;
   background: white;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   border-radius: 10px;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
+
 .header a {
   margin-left: 10px;
   border-bottom: 2px solid #ffe100;
   padding: 4px;
   cursor: pointer;
 }
+
 .header a:hover {
   background: #ffe100;
   color: black;
@@ -45,14 +45,18 @@ h1,h2,p,a,input{
 
 /* content styles */
 .content {
-  width: 100%;
+  width: 550px; /* mesma largura do header */
   padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 /* request list styles */
 .request-list li {
   padding: 20px;
-  margin: 10px auto;
+  margin: 10px 0;
   list-style-type: none;
   background: white;
   border-radius: 10px;
@@ -60,15 +64,18 @@ h1,h2,p,a,input{
   display: flex;
   justify-content: space-between;
 }
+
 .request-list .votes {
   position: relative;
   top: -5px;
   z-index: 0;
 }
+
 .request-list .upvote {
   cursor: pointer;
   border-radius: 50%;
 }
+
 .request-list .upvote:active {
   color: black;
   background: #ffe100;
@@ -84,6 +91,7 @@ h1,h2,p,a,input{
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
+
 .new-request {
   display: none;
   position: fixed;
@@ -107,6 +115,7 @@ input {
   border-width: 0 0 2px 0;
   width: 100%;
 }
+
 button {
   margin-top: 10px;
   padding: 8px 12px;
@@ -115,4 +124,18 @@ button {
   font-weight: bold;
   font-family: inherit;
   cursor: pointer;
+}
+
+/* Responsividade para telas menores que 900px */
+@media (max-width: 900px) {
+  .class-project {
+      min-width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+  }
+  
+  .header, .content {
+      width: 100%;
+      max-width: 250px; /* mantém a largura máxima de 250px */
+  }
 }

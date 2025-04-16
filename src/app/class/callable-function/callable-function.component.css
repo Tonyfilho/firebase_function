@@ -82,6 +82,18 @@
   background-repeat: no-repeat;  
   padding: 20px; /* Espaço nas bordas em telas pequenas */
 }
+.images2 {
+  width: 100%;
+  min-height: 35vh; /* Garante no mínimo a altura da viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./../../../asset/img/01A_Callable_Function_ex.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;  
+  padding: 20px; /* Espaço nas bordas em telas pequenas */
+}
 
 
 

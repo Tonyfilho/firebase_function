@@ -30,5 +30,8 @@ exports.toTheDojo = functions.https.onRequest(
 
 // Callable Function, pode ser chamado pelo front-end, ou seja, o front-end chama a função e não o contrário
 exports.sayHello = functions.https.onCall((data: any, context: any) => {
-  return `Hello ${data.name} `;
+  console.log('Received data:', data.name);
+  console.error('Received data:', data.name);
+  const name = data.name;
+  return `Hello ${name} `;
 });

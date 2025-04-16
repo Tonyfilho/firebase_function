@@ -1,11 +1,13 @@
 <div class="center">
   <h1>Welcome to the Hello OnCall Functions</h1>
+  <p class="welcome-title">No Front-End Angular</p>
+  <div class="images2">  </div>
   <p>01- Callable function precisa se chamanda no front-end com o firebase callable function.
     Callable não se retorna o Data, ao contrario do Request Functions onde retornamos o RESPONSE
     Neste caso, o retorno é feito pelo firebase, e não pelo código.
     Callable function não precisa de cors, pois o firebase já faz isso para nós.</p>
-
   <p>
+
     02- Em Callable Functions, você não retorna um Response HTTP diretamente (como em onRequest). Em vez disso, você
     retorna um objeto/dados, e o Firebase SDK encapsula isso em "{{ '{' }} data: ... {{ '}' }}" automaticamente.
     No front-end, você acessa os dados via result.data (como no exemplo acima).
@@ -25,19 +27,16 @@
     por meio de seu próprio protocolo (não é uma requisição HTTP direta). Já em funções HTTP tradicionais (onRequest),
     você precisa configurar CORS manualmente.
   </p>
-  <p class="welcome-title">Callable Functions</p>
-  <div class="images">
-  </div>
-
+  <p class="welcome-title">Callable Functions no Back-End ou Functions para Serveless</p>
+  <div class="images">  </div>
+                                                
 
 
 
 
   <h2>Request a Tutorial</h2>
-  <form>
-    <input type="text" name="request" placeholder="Request...">
-    <button (click)="getHello()">Get Request</button>
-    <p class="error"></p>
+  <form>    
+    <button type="button" (click)="getHello()">Get Request</button>   
   </form>
 
 

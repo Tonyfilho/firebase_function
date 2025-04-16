@@ -6,8 +6,9 @@ import { from, map } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class FirebaseFunctionsService {
-  sayHello(name: string) {
+  sayHello() {
     const callable = httpsCallable<{ name: string }, string>(functions, 'sayHello');
-    return from(callable({ name })).pipe(map(res => res.data));
+
+    return from(callable({ name: 'tony' })).pipe(map(res => res.data));
   }
 }

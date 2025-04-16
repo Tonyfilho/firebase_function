@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FirebaseService } from '../firebase.service';
+import { FirebaseFunctionsService } from '../../firebase-services/firebase-functions.service';
 
 
 @Component({
@@ -12,16 +13,17 @@ import { FirebaseService } from '../firebase.service';
 export class CallableFunctionComponent {
 localHello!: string;
 isModalOpen = true;
-fucntionsService = inject(FirebaseService);
+//fucntionsService = inject(FirebaseService);
+fucntionsFunctionsService = inject(FirebaseFunctionsService);
 
 
 
 
 getHello() {
- this.fucntionsService.getHello().subscribe({
+ this.fucntionsFunctionsService.sayHello().subscribe({
   next: (res) => {
     this.localHello = res;
-    console.log('res', res);
+    console.log('res no CallableFunctionComponent ', res);
   },
   error: (err) => {
     console.error('Error:', err);

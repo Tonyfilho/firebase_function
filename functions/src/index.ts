@@ -1,5 +1,15 @@
+// Dependencies for callable functions.
+const {onCall, HttpsError} = require("firebase-functions/v2/");
+const {logger} = require("firebase-functions/v2");
+
+// Dependencies for the addMessage function.
+const {getDatabase} = require("firebase-admin/database");
+const sanitizer = require("./sanitizer");
+
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
+
+
 admin.initializeApp();
 //const db = admin.firestore();
 const cors = require('cors')({ origin: true });
